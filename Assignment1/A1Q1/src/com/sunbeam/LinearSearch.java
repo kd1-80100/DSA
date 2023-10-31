@@ -3,19 +3,20 @@ package com.sunbeam;
 import java.util.Scanner;
 
 public class LinearSearch {
-	public static int linearSearch(int arr[], int n, int key) {
-		int count = 0;
-		for (int i = 0; i < size; i++) {
-			count++;
+	public static int linearSearch(int arr[], int key) {
+		int count = 1;
+		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == key) {
-			c++;
-			if c==n
-			ret i;
-				System.out.println("Number of comparisons:" + count);
-				break;
+				return count;
+			} else {
+				count++;
 			}
 		}
-		return count;
+
+		if (count > arr.length) {
+			return -1;
+		} else
+			return count;
 	}
 
 	public static void main(String[] args) {
@@ -23,6 +24,11 @@ public class LinearSearch {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the number:");
 		int key = sc.nextInt();
-		int index=linearSearch(arr, arr.length, key);
+		int index=linearSearch(arr, key);
+		if (index == -1) {
+			System.out.println("element not found");
+		}else {
+			System.out.println("element found at index "+index);
+		}
 	}
 }
